@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\ISLab2\ISLab2\bin\Debug\ISLab2.exe.config
+C:\Users\User\source\repos\ISLab2\ISLab2\bin\Debug\ISLab2.exe
+C:\Users\User\source\repos\ISLab2\ISLab2\bin\Debug\ISLab2.pdb
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.csprojAssemblyReference.cache
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.Form1.resources
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.Properties.Resources.resources
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.csproj.GenerateResource.cache
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.exe
+C:\Users\User\source\repos\ISLab2\ISLab2\obj\Debug\ISLab2.pdb
