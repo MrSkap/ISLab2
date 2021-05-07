@@ -16,5 +16,72 @@ namespace ISLab2
 		{
 			InitializeComponent();
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			chart1.Series[0].Points.Clear();
+			chart1.Series[1].Points.Clear();
+			chart1.Series[2].Points.Clear();
+			FillMass(0.6, 0.8, dataGridView1, 0);
+			Random random = new Random();
+			//Console.Write("Введите a:");
+			//double readA = Convert.ToDouble(Console.ReadLine());
+			double readA = Convert.ToDouble(textBoxA.Text);
+			//Console.Write("Введите b:");
+			//double readB = Convert.ToDouble(Console.ReadLine());
+			double readB = Convert.ToDouble(textBoxB.Text);
+			//Console.WriteLine();
+			for (int i = 0; i < Interval2.points.Length; i++)
+			{
+				Interval2.points[i] = new Point2(Interval2.x1 + i, readA * Math.Exp(readB * (Interval2.x1 + i)));
+			}
+			for (int i = 0; i < Interval2.points.Length; i++)
+			{
+				if (Interval2.points[i].Y > Interval2.MaxY)
+				{
+					Interval2.MaxY = Interval2.points[i].Y;
+				}
+				if (Interval2.points[i].Y < Interval2.MinY)
+				{
+					Interval2.MinY = Interval2.points[i].Y;
+				}
+			}
+			Population2 population1 = new Population2();
+			for (int i = 0; i < population1.persons.Length; i++)
+			{
+				double a = random.NextDouble();
+				double b = random.NextDouble();
+				population1.persons[i] = new Person2(a, b);
+			}
+			population1.Alg(Convert.ToDouble(textBoxFitness1.Text));
+			var result1 = population1.GetMaxFitness();
+			labelA1.Text = Convert.ToString(result1.A);
+			labelB1.Text = Convert.ToString(result1.B);
+			FillMass(result1.A, result1.B, dataGridView2, 1);
+
+			Population2 population2 = new Population2();
+			for (int i = 0; i < population2.persons.Length; i++)
+			{
+				double a = random.NextDouble();
+				double b = random.NextDouble();
+				population2.persons[i] = new Person2(a, b);
+			}
+			population2.Alg(Convert.ToDouble(textBoxFitness2.Text));
+			var result2 = population2.GetMaxFitness();
+			labelA2.Text = Convert.ToString(result2.A);
+			labelB2.Text = Convert.ToString(result2.B);
+			FillMass(result2.A, result2.B, dataGridView3, 2);
+		}
+
+
+		void FillMass(double A, double B, DataGridView dataGridView, int seriesNumber)
+		{
+			for (int x = 0; x < 10; x++)
+			{
+				double y = A * Math.Exp(B * x);
+				dataGridView.Rows.Add(x, y);
+				chart1.Series[seriesNumber].Points.AddXY(x, y);
+			}
+		}
 	}
 }
